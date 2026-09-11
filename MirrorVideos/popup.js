@@ -1,0 +1,1 @@
+document.getElementById("mirrorVideos").addEventListener("change",function(){this.checked,chrome.runtime.sendMessage({action:"toggleMirror"})});

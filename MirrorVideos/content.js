@@ -1,0 +1,1 @@
+let isMirrored=!1;function mirrorVideos(){document.querySelectorAll("video").forEach(video=>{video.style.transform=isMirrored?"rotateY(0deg)":"rotateY(180deg)"}),isMirrored=!isMirrored}chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{"toggleMirror"===request.action&&mirrorVideos()});

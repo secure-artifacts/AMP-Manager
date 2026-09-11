@@ -1,0 +1,12 @@
+
+This extension uses @breezystack/lamejs for MP3 encoding.
+
+Project:
+https://github.com/zhuker/lamejs/blob/master/lame.all.js
+
+License:
+GNU Lesser General Public License v3.0
+
+The library is distributed as a separate, unmodified component.
+The corresponding source code is available from the project repository.
+

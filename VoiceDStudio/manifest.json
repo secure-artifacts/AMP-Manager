@@ -1,0 +1,87 @@
+{
+  "manifest_version": 3,
+  "name": "FB Voice Device Studio",
+  "version": "0.9.9",
+  "description": "V0.99 - 实时对话翻译独立弹窗，支持双麦克风选择保存。",
+  "permissions": [
+    "activeTab",
+    "clipboardRead",
+    "offscreen",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://api.elevenlabs.io/*",
+    "https://docs.google.com/*",
+    "https://docs.googleusercontent.com/*",
+    "https://facebook.com/*",
+    "https://instagram.com/*",
+    "https://messenger.com/*",
+    "https://translate.google.com/*",
+    "https://translate.googleapis.com/*",
+    "https://www.facebook.com/*",
+    "https://www.instagram.com/*",
+    "https://www.messenger.com/*"
+  ],
+  "action": {
+    "default_title": "Voice Device Studio",
+    "default_popup": "VoiceDStudio.html",
+    "default_icon": {
+      "16": "icons/VoiceDStudio16.png",
+      "32": "icons/VoiceDStudio32.png",
+      "48": "icons/VoiceDStudio48.png",
+      "128": "icons/VoiceDStudio128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://facebook.com/*",
+        "https://instagram.com/*",
+        "https://messenger.com/*",
+        "https://www.facebook.com/*",
+        "https://www.instagram.com/*",
+        "https://www.messenger.com/*"
+      ],
+      "js": ["pageHook.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://facebook.com/*",
+        "https://instagram.com/*",
+        "https://messenger.com/*",
+        "https://www.facebook.com/*",
+        "https://www.instagram.com/*",
+        "https://www.messenger.com/*"
+      ],
+      "js": ["VoiceDStudioContent.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://www.facebook.com/*",
+        "https://facebook.com/*",
+        "https://www.messenger.com/*",
+        "https://messenger.com/*",
+        "https://www.instagram.com/*",
+        "https://instagram.com/*"
+      ],
+      "js": ["pageManager.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/VoiceDStudio16.png",
+    "32": "icons/VoiceDStudio32.png",
+    "48": "icons/VoiceDStudio48.png",
+    "128": "icons/VoiceDStudio128.png"
+  }
+}
