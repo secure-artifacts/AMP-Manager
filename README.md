@@ -1,15 +1,5 @@
 # AMP-Manager 更新记录
 
-## 压缩构建脚本
-
-- 双击 `build-extension.bat` 可生成压缩版扩展输出。
-- 构建脚本只读取 `work` 源码并输出到 `D:\ChromeExtension\AMP-Manager\outputs`，不会覆盖或压缩 `work` 里的源码。
-- 首次运行会在 `work\tools\node_modules` 安装构建依赖。
-- 输出内容会压缩 `.js`、`.css`、`.html`，其中 HTML 会删除注释，但不会改写链接 URL。
-- 输出目录为 `outputs\AMP-Manager_optimized`，ZIP 为 `outputs\AMP-Manager_optimized_版本号.zip`。
-
-
-
 ## V0.29 - 2026-06-19
 
 - 收口 V0.28 之后的 VoiceDStudio 右侧管理栏弹窗模式、发送转发、提示静默与 CL 白名单面板联动优化。
